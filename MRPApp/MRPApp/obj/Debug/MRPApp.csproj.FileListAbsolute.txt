@@ -1,0 +1,10 @@
+H:\CS 342\Final\MRPApp\MRPApp\bin\Debug\MRPApp.exe.config
+H:\CS 342\Final\MRPApp\MRPApp\bin\Debug\MRPApp.exe
+H:\CS 342\Final\MRPApp\MRPApp\bin\Debug\MRPApp.pdb
+H:\CS 342\Final\MRPApp\MRPApp\obj\Debug\MRPApp.csprojAssemblyReference.cache
+H:\CS 342\Final\MRPApp\MRPApp\obj\Debug\MRPApp.Form1.resources
+H:\CS 342\Final\MRPApp\MRPApp\obj\Debug\MRPApp.Properties.Resources.resources
+H:\CS 342\Final\MRPApp\MRPApp\obj\Debug\MRPApp.csproj.GenerateResource.cache
+H:\CS 342\Final\MRPApp\MRPApp\obj\Debug\MRPApp.csproj.CoreCompileInputs.cache
+H:\CS 342\Final\MRPApp\MRPApp\obj\Debug\MRPApp.exe
+H:\CS 342\Final\MRPApp\MRPApp\obj\Debug\MRPApp.pdb
