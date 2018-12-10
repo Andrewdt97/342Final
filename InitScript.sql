@@ -4,6 +4,17 @@ GO
 use MRP
 GO
 
+CREATE TABLE Vendor
+(
+    VendorId int IDENTITY(1, 1) PRIMARY KEY NOT NULL
+    , CompanyName varchar(40) NOT NULL
+    , mainContactName varchar(40) NOT NULL
+    , phoneNumber varchar(40) NOT NULL
+    , paymentAddress varchar(200)  NOT NULL
+    , rating varchar(2)  NOT NULL
+)
+GO
+
 CREATE TABLE Parts (
     partID int IDENTITY(1, 1) PRIMARY KEY NOT NULL
     , partName varchar(30)NOT NULL
@@ -15,7 +26,7 @@ CREATE TABLE Parts (
     , UnitType varchar(30)NOT NULL
     , PartPicture varchar(30)NULL
     , HoursofAssembly real NOT NULL
-	, supplyVenderId int FOREIGN KEY REFERENCES Vendor(VendorId) NULL
+	, supplyVendorId int FOREIGN KEY REFERENCES Vendor(VendorId) NULL
 );
 
 GO
@@ -83,18 +94,6 @@ CREATE TABLE CreditHistory
 
 GO
 
-CREATE TABLE Vendor
-(
-    VendorId int IDENTITY(1, 1) PRIMARY KEY NOT NULL
-    , CompanyName varchar(20) NOT NULL
-    , mainContactName varchar(40) NOT NULL
-    , phoneNumber varchar(40) NOT NULL
-    , paymentAddress varchar(200)  NOT NULL
-    , rating varchar(2)  NOT NULL
-)
-GO
-
-
 CREATE TABLE Resources
 (
     InventoryId int Primary Key NOT NULL
@@ -141,8 +140,8 @@ BEGIN
 END
 GO
 
-CREATE PROCEDURE sp_AddVendor
-@name varchar(20),
+CREATE PROC sp_AddVendor
+@name varchar(40),
 @contactName varchar(40),
 @phoneNum varchar(40),
 @paymentAddress varchar(200),
@@ -152,8 +151,9 @@ BEGIN
 	INSERT INTO Vendor
 	VALUES (@name, @contactName, @phoneNum, @paymentAddress, @rating)
 END
+GO
 
-CREATE PROCEDURE sp_AddVendorPart
+CREATE PROC sp_AddVendorPart
 @vendorId int,
 @partId int
 AS
@@ -165,8 +165,30 @@ BEGIN
 		WHERE partID = @partId
 	END
 END
+GO
 
+CREATE PROC sp_GetVendorId
+@name varchar(40)
+AS
+BEGIN
+	SELECT VendorId
+	FROM Vendor
+	WHERE companyName = @name
+END
+GO
 
 -- Template for item insertion
 INSERT INTO parts (partName, description, UnitCost, UnitType, HoursofAssembly)
-VALUES ('Jesus', 'just a screw', 12.00, 'EA', 1.0)
+VALUES ('Coke', 'Crack open one', 1.25, 'EA', 1.0)
+
+INSERT INTO parts (partName, description, UnitCost, UnitType, HoursofAssembly)
+VALUES ('Mt. Dew', 'Way too muchs sugar', 1.50, 'EA', 1.0)
+
+INSERT INTO parts (partName, description, UnitCost, UnitType, HoursofAssembly)
+VALUES ('Root Beer', 'Family friendly', 1.00, 'EA', 1.0)
+
+INSERT INTO parts (partName, description, UnitCost, UnitType, HoursofAssembly)
+VALUES ('Vernors', 'Michigan Classic', 0.95, 'EA', 1.0)
+
+INSERT INTO parts (partName, description, UnitCost, UnitType, HoursofAssembly)
+VALUES ('Fanta', 'Orange only', 1.00, 'EA', 1.0)
