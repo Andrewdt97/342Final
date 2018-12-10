@@ -170,3 +170,28 @@ END
 -- Template for item insertion
 INSERT INTO parts (partName, description, UnitCost, UnitType, HoursofAssembly)
 VALUES ('Jesus', 'just a screw', 12.00, 'EA', 1.0)
+
+
+
+CREATE INDEX inventoryIndex
+ON Inventory (ProductId);
+GO
+
+
+CREATE INDEX customerIndex
+ON Customer (CustomerId);
+GO
+
+CREATE INDEX BoMIndex
+ON BoM (ParentID, ChildID);
+GO
+
+
+CREATE INDEX PartsIndex
+ON Parts (partID);
+GO
+
+
+CREATE INDEX VendorIndex
+ON Vendor (ParentID, VendorId);
+GO
