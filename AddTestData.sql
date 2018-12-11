@@ -1,3 +1,6 @@
+USE MRP
+GO
+
 INSERT INTO parts (partName, description, UnitCost, UnitType, HoursofAssembly)
 VALUES ('Coke', 'Crack open one', 1.25, 'EA', 1.0)
 

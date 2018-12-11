@@ -1,0 +1,10 @@
+1.	A script that will implement the database design, stored procedures and views.
+	 -> InitScript.sql
+2.	A script that provides test data.
+	-> AddTestData.sql
+4.	The visual studio solution.  The database should connect to “localhost”
+	-> ./MRPApp/ (running the Add Vendor use case)
+5.	A document that describes the use of the application created.
+	-> README.txt
+6.	A document that describes the decisions you made based on the CRUD tables for performance tuning.  Please provide detail.
+	-> CRUD Analysis.docx + CrudAnalysisDescription.docx 

@@ -15,3 +15,8 @@ To use the application and add a vendor:
 			NOTE: Parts remain selected even if they have been filtered out
 
 	Click on the "Save" button when all information has been entered and at least one product has been selected
+	
+To test application ran correctly, run the following query
+SELECT partID, partName, CompanyName
+FROM Parts
+JOIN Vendor ON Parts.supplyVendorId = Vendor.VendorId
